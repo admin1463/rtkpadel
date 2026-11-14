@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="da"><head><meta charset="utf-8"><meta name="robots" content="noindex"><title>RTK padel</title>
+<script>
+(function () {
+  var navn = location.pathname.replace(/^\/+|\/+$/g, '').split('/')[0].toLowerCase().replace(/[^a-z0-9._-]/g, '').slice(0, 40);
+  var q = new URLSearchParams(location.search);
+  if (navn && !q.get('kilde') && !q.get('utm_source')) q.set('kilde', navn);
+  var s = q.toString();
+  location.replace('/' + (s ? '?' + s : '') + location.hash);
+})();
+</script></head>
+<body><p><a href="/">Gå til rtkpadel.dk</a></p></body></html>
